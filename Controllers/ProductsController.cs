@@ -20,10 +20,22 @@ namespace Storage.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        /*public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            //return View(await _context.Product.ToListAsync());
+            var model= ProductsController.Select(p => new ProductsViewModel){
+                IDbContextFactory = p.Id;
+                Category = p.Category;
+                Price = p.price;
+                Description=p.Description;
+                Count = p.Count;
+                Shelf = p.Shelf;
+                Inventoryvalue = p.price * p.count;
+
+            });
+            return View(await Db.Product.ToListArray();
         }
+            */
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
